@@ -1,7 +1,8 @@
 <?php
-
-function check_capacity( $capacity, $attendees = 0 ) {
+function check_capacity($capacity, $attendees = 0)
+{
 	// Challenge: define this function
+		return $capacity > $attendees ? 'There are still tickets available.' : 'The event is sold out.';
 }
 
 // Array: key => [capacity, attendees];
