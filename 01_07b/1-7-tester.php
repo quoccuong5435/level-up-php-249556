@@ -13,12 +13,13 @@
 	
 	$alice = new Student('Alice', '2002-10-12', '2023', '3.45');
 	$bob = new Student( 'Bob', '2005-05-04');
-	$jane = new Student( 'Jane', '2007-06-01', '2028');
+	$jane = new Student( 'Jane', '2007-06-01', '2029');
 
 	echo $alice->get_name() . ' graduates in ' . $alice->get_graduation_year() . '<br/>';
 	echo $bob->get_name() . ' graduates in ' . $bob->get_graduation_year() . '<br/>';
+	echo $jane->get_name() . ' graduates in ' . $jane->get_graduation_year() . '<br/>';
 	echo $jane->get_name() . ' is ' . $jane->get_age() . ' years old. <br/>';
-	$bob->set_gpa(2.79);
+	$bob->set_gpa(3.8);
 	$jane->set_gpa(4.0);
 	
 	echo '<p>The Class Average is ' . class_average([$alice, $bob, $jane]) . '</p>';

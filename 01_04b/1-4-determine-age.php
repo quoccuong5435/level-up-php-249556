@@ -17,9 +17,18 @@ class Person {
 		return $this->dob;
 	}
 	
+		/**
+		 * Calculates the age of the person based on their date of birth.
+		 *
+		 * @return int The age of the person.
+		 */
 	public function get_age() {
 		// Challenge: define this function
-
+		$currentYear = new DateTime($this->dob);
+		$dobYear = new DateTime('now');
+		$interval = $currentYear->diff($dobYear);
+		$age = $interval->y;
+		return $age;
 	}
 }
 

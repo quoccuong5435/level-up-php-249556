@@ -36,7 +36,10 @@ function print_array( $a ) {
 }
 
 function compare_ages( $p1, $p2) {
-	// Challenge: Refactor this function. 
+	if($p1->get_age() == $p2->get_age()) {
+		return 0;
+	}
+		return ($p1->get_age() > $p2->get_age()) ? 1 : -1;
 }
 
 $joe = new Person('Joe', '2010-10-20');
@@ -48,7 +51,7 @@ $lou = new Person('Lou', '2010-07-12');
 $rob = new Person('Rob', '2003-12-16');
 $louis = new Person('Louis', '2004-05-20');
 $marie = new Person('Marie', '2010-05-25');
-$bob = new Person('Bob', '2007-01-07');
+$bob = new Person('Bob', '2007-01-07');	
 $alice = new Person('Alice', '2015-11-13');
 $jane = new Person('Jane', '2016-12-16');
 $john = new Person('John', '2007-04-30');
@@ -57,6 +60,10 @@ $carl = new Person('Carl', '2010-03-25');
 $people = [ $joe, $phil, $erin, $alice, $bob, $carl, $jane, $john, $lou, $louis, $marie, $mike, $rob, $teresa];
 
 // Sort Here!
+usort( $people, 'compare_ages' );
 
 // Print Results
-print_array( $people ); 
+// print_array( $people ); 
+foreach( $people as $person ) {
+	echo $person->get_name() . ' is ' . $person->get_age() . ' years old.<br>';
+}

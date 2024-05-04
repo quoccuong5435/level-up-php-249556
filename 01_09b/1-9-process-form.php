@@ -1,7 +1,14 @@
-<?php 
-function process_form() {
-	// Challenge: define this function
-} 
+<?php
+function process_form()
+{
+	// Challenge: define this function\
+
+	foreach ($_POST as $label => $value) {
+		if ('submit' !== $label) {
+			echo '<p><b>' . ucfirst($label) . '</b>: ' . $value . '</p>';
+		}
+	}
+}
 
 ?>
 
@@ -14,6 +21,11 @@ function process_form() {
 	</head>
 	<body>
 		<main>
+			<?php 
+				if ( isset( $_POST['submit'] ) ) {
+					process_form();
+				}
+			?>
 			<form name="contact" method="POST">
 				<div>
 					<label for="name">Name:</label>

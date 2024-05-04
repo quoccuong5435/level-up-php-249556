@@ -28,8 +28,23 @@ class Person {
 	}
 }
 
-function compare_ages( $p1, $p2) {
-	// Challenge: define this function
+/**
+ * Compares the age of two Person objects
+ * @param Person $p1 First person to compare
+ * @param Person $p2 Second person to compare
+ * @return string Comparison of age between the two people
+ */
+function compare_ages(Person $p1, Person $p2): string {
+	$age_p1 = $p1->get_age();
+	$age_p2 = $p2->get_age();
+	if ( $age_p1 == $age_p2 ) {
+		$result = $p1->get_name() . ' and ' . $p2->get_name() . ' are the same age.';
+	} elseif ( $age_p1 > $age_p2 ) {
+		$result = $p1->get_name() . ' is older than ' . $p2->get_name();
+	}else {
+		$result = $p1->get_name() . ' is younger than ' . $p2->get_name();
+	}
+	return $result;
 }
 
 
